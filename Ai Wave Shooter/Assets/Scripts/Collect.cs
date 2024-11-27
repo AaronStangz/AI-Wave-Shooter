@@ -24,8 +24,6 @@ public class Collect : MonoBehaviour
     public void CollectItem()
     {
         MM.Xp += GiveXP;
-        MM.Planks += GivePlanks;
-        MM.ScrapPlanks += GiveScrapPlanks;
         MM.Metal += GiveMetal;
         MM.ScrapMetal += GiveScrapMetal;
         Destroy(gameObject);

@@ -90,7 +90,6 @@ public class Hub : MonoBehaviour
 
         RText[3].text = " " + MM.ReinforcedPlate + " / " + "10 ";
         RText[4].text = " " + MM.ReinforcedRod + " / " + "25 ";
-        RText[5].text = " " + MM.Beem + " / " + "8 ";
     }
 
     public void UpgradeTeir0()
@@ -139,11 +138,10 @@ public class Hub : MonoBehaviour
 
     public void UpgradeTeir4()
     {
-        if (MM.ReinforcedPlate >= 10 && MM.ReinforcedRod >= 25 && MM.Beem >= 8)
+        if (MM.ReinforcedPlate >= 10 && MM.ReinforcedRod >= 25)
         {
             MM.ReinforcedPlate -= 10;
             MM.ReinforcedRod -= 25;
-            MM.Beem -= 8;
             Teir4.SetActive(true);
             TeirButons[5].SetActive(true);
         }
