@@ -7,32 +7,23 @@ using TMPro;
 
 public class Hub : MonoBehaviour
 {
-    public int maxHealth;
-    public int curHealth;
-    [SerializeField] private LayerMask whatIsEnemy;
-    public float attackRange;
-    public bool enemyInRange;
-    
     public GameObject mainManager;
     MainManager MM;
-
+    [Space]
     public int openRange;
     public bool HubOpen;
-
+    [Space]
     public TMP_Text[] RText;
+    [Space]
     public GameObject[] TeirPage;
+    [Space]
     public GameObject[] TeirButons;
+    [Space]
     public GameObject Teir0;
     public GameObject Teir1;
     public GameObject Teir2;
     public GameObject Teir3;
-    public GameObject Teir4;
-    public GameObject Teir5;
-    public GameObject Teir6;
-    public GameObject Teir7;
-    public GameObject Teir8;
-    public GameObject Teir9;
-
+    [Space]
     public GameObject HubGUI;
     public GameObject Player;
     // Start is called before the first frame update
@@ -43,8 +34,6 @@ public class Hub : MonoBehaviour
 
     void Update()
     {
-        enemyInRange = Physics.CheckSphere(transform.position, attackRange, whatIsEnemy);
-        if (enemyInRange) { AttackEnemy(); }
 
         if (Input.GetKey(KeyCode.Escape) && HubOpen)
         {
@@ -57,11 +46,6 @@ public class Hub : MonoBehaviour
         {
             TextUpdate();
         }
-    }
-
-    public void AttackEnemy()
-    {
-        curHealth -= 10;
     }
 
     public void Open()
@@ -88,8 +72,11 @@ public class Hub : MonoBehaviour
         RText[1].text = " " + MM.Rod + " / " + "25 ";
         RText[2].text = " " + MM.Plate + " / " + "10 ";
 
+        RText[3].text = " " + MM.Plate + " / " + "20 ";
+        RText[1].text = " " + MM.NutsNbolts + " / " + "60 ";
+
         RText[3].text = " " + MM.ReinforcedPlate + " / " + "10 ";
-        RText[4].text = " " + MM.ReinforcedRod + " / " + "25 ";
+        RText[1].text = " " + MM.Rod + " / " + "30 ";
     }
 
     public void UpgradeTeir0()
@@ -115,10 +102,10 @@ public class Hub : MonoBehaviour
 
     public void UpgradeTeir2()
     {
-        if (MM.Rod >= 25 && MM.Plate >= 10)
+        if (MM.Plate >= 20 && MM.NutsNbolts >= 60)
         {
-            MM.Rod -= 25;
-            MM.Plate -= 10;           
+            MM.Plate += 20;
+            MM.NutsNbolts -= 60;
             TeirButons[3].SetActive(true);
             Teir2.SetActive(true);
         }
@@ -126,78 +113,12 @@ public class Hub : MonoBehaviour
 
     public void UpgradeTeir3()
     {
-        if (MM.Rod >= 50 && MM.ReinforcedPlate >= 10 && MM.CopperWire >= 15)
+        if (MM.ReinforcedPlate >= 10 && MM.Rod >= 30)
         {
-            MM.Rod -= 50;
             MM.ReinforcedPlate -= 10;
-            MM.CopperWire -= 15;
+            MM.Rod += 30;
             Teir3.SetActive(true);
             TeirButons[4].SetActive(true);
-        }
-    }
-
-    public void UpgradeTeir4()
-    {
-        if (MM.ReinforcedPlate >= 10 && MM.ReinforcedRod >= 25)
-        {
-            MM.ReinforcedPlate -= 10;
-            MM.ReinforcedRod -= 25;
-            Teir4.SetActive(true);
-            TeirButons[5].SetActive(true);
-        }
-    }
-
-    public void UpgradeTeir5()
-    {
-        if (MM.Rod >= 25 && MM.Plate >= 10)
-        {
-            MM.Rod -= 25;
-            MM.Plate -= 10;
-            Teir5.SetActive(true);
-            TeirButons[6].SetActive(true);
-        }
-    }
-
-    public void UpgradeTeir6()
-    {
-        if (MM.Rod >= 25 && MM.Plate >= 10)
-        {
-            MM.Rod -= 25;
-            MM.Plate -= 10;
-            Teir6.SetActive(true);
-            TeirButons[7].SetActive(true);
-        }
-    }
-
-    public void UpgradeTeir7()
-    {
-        if (MM.Rod >= 25 && MM.Plate >= 10)
-        {
-            MM.Rod -= 25;
-            MM.Plate -= 10;
-            Teir7.SetActive(true);
-            TeirButons[8].SetActive(true);
-        }
-    }
-
-    public void UpgradeTeir8()
-    {
-        if (MM.Rod >= 25 && MM.Plate >= 10)
-        {
-            MM.Rod -= 25;
-            MM.Plate -= 10;
-            Teir8.SetActive(true);
-            TeirButons[9].SetActive(true);
-        }
-    }
-
-    public void UpgradeTeir9()
-    {
-        if (MM.Rod >= 25 && MM.Plate >= 10)
-        {
-            MM.Rod -= 25;
-            MM.Plate -= 10;
-            Teir9.SetActive(true);
         }
     }
 }

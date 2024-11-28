@@ -64,6 +64,42 @@ public class Raycast : MonoBehaviour
                 }
 
             }
+
+            if (Interactable.value == (1 << hit.collider.gameObject.layer))
+            {
+
+                ResourceDrone RD = hit.collider.GetComponent<ResourceDrone>();
+                if (RD != null)
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        if (hit.distance < RD.openRange)
+                        {
+                            Debug.Log("Open");
+                            RD.Open();
+                        }
+                    }
+                }
+
+            }
+
+            if (Interactable.value == (1 << hit.collider.gameObject.layer))
+            {
+
+                CraftingTable CT = hit.collider.GetComponent<CraftingTable>();
+                if (CT != null)
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        if (hit.distance < CT.openRange)
+                        {
+                            Debug.Log("Open");
+                            CT.Open();
+                        }
+                    }
+                }
+
+            }
         }
     }
 }

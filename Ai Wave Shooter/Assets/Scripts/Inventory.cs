@@ -93,31 +93,6 @@ public class Inventory : MonoBehaviour
         }
         else { item[5].SetActive(false); }
 
-
-        if (MM.Copper >= 1)
-        {
-            item[6].SetActive(true);
-            ItemText[6].text = MM.Copper + " ";
-        }
-        else { item[6].SetActive(false); }
-
-
-        if (MM.CopperWire >= 1)
-        {
-            item[7].SetActive(true);
-            ItemText[7].text = MM.CopperWire + " ";
-        }
-        else { item[7].SetActive(false); }
-
-
-        if (MM.MetalWire >= 1)
-        {
-            item[8].SetActive(true);
-            ItemText[8].text = MM.MetalWire + " ";
-        }
-        else { item[8].SetActive(false); }
-
-
         if (MM.NutsNbolts >= 1)
         {
             item[9].SetActive(true);
@@ -132,62 +107,6 @@ public class Inventory : MonoBehaviour
             ItemText[10].text = MM.ReinforcedPlate + " ";
         }
         else { item[10].SetActive(false); }
-
-
-        if (MM.MetalSheet >= 1)
-        {
-            item[11].SetActive(true);
-            ItemText[11].text = MM.MetalSheet + " ";
-        }
-        else { item[11].SetActive(false); }
-
-
-        if (MM.ReinforcedRod >= 1)
-        {
-            item[12].SetActive(true);
-            ItemText[12].text = MM.ReinforcedRod + " ";
-        }
-        else { item[12].SetActive(false); }
-
-
-        if (MM.MetalBeam >= 1)
-        {
-            item[13].SetActive(true);
-            ItemText[13].text = MM.MetalBeam + " ";
-        }
-        else { item[13].SetActive(false); }
-
-
-        if (MM.HardenMetal >= 1)
-        {
-            item[14].SetActive(true);
-            ItemText[14].text = MM.HardenMetal + " ";
-        }
-        else { item[14].SetActive(false); }
-
-
-        if (MM.ReinforcedWire >= 1)
-        {
-            item[15].SetActive(true);
-            ItemText[15].text = MM.ReinforcedWire + " ";
-        }
-        else { item[15].SetActive(false); }
-
-
-        if (MM.ReinforcedNutsNBolts >= 1)
-        {
-            item[16].SetActive(true);
-            ItemText[16].text = MM.ReinforcedNutsNBolts + " ";
-        }
-        else { item[16].SetActive(false); }
-
-
-        if (MM.ReinforcedBeam >= 1)
-        {
-            item[17].SetActive(true);
-            ItemText[17].text = MM.ReinforcedBeam + " ";
-        }
-        else { item[17].SetActive(false); }
     }
 }
 
